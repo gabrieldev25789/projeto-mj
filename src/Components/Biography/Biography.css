@@ -1,0 +1,239 @@
+.biography {
+  background: linear-gradient(180deg, #000, #0d0d0d);
+  color: white;
+  padding: 4rem 2rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Título principal */
+.biography h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: gold;
+  margin-bottom: 3rem;
+  letter-spacing: 0.125rem; /* 2px → rem */
+  position: relative;
+}
+
+.biography h2::after {
+  content: "";
+  width: 5rem; /* 80px → rem */
+  height: 0.188rem; /* 3px → rem */
+  background: gold;
+  display: block;
+  margin: 0.625rem auto 0; /* 10px → rem */
+  border-radius: 0.625rem; /* 10px → rem */
+}
+
+/* Seções */
+.bio-section {
+  max-width: 68.75rem; /* 1100px → rem */
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 1.25rem; /* 20px → rem */
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(0.625rem); /* 10px → rem */
+
+  border: 0.063rem solid rgba(255, 215, 0, 0.1); /* 1px → rem */
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.6); /* 10px 30px → rem */
+
+  transition: 0.3s;
+}
+
+.bio-section p{
+  text-align: center;
+}
+
+.intro {
+  height: 135vh;
+  max-width: 120rem; /* 1500px → rem */
+}
+
+.registros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.registros img {
+  width: 40rem !important;
+  height: 30rem; /* substitui 301.5px */
+   /* substitui 480px */
+  margin: 1rem;
+  
+  object-fit: cover;  /* mantém o corte bonito sem deformar */
+  border-radius: 0.625rem; /* opcional: cantos arredondados */
+  box-shadow: 0 0.625rem 1.563rem rgba(0,0,0,0.5); /* opcional */
+}
+
+.bio-section:hover {
+  transform: translateY(-0.312rem); /* 5px → rem */
+  box-shadow: 0 0.9375rem 2.5rem rgba(255, 215, 0, 0.15); /* 15px 40px → rem */
+}
+
+/* Subtítulos */
+.bio-section h3 {
+  text-align: center;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.8rem;
+  width: 50%;
+  margin: 0 auto 2.25rem;
+  color: gold;
+  font-size: 1.8rem;
+}
+
+/* Texto */
+.bio-section p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+/* Conteúdo com imagem */
+.bio-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* 20px → rem */
+  margin-top: 0.625rem; /* 10px → rem */
+}
+
+/* Inverter lado */
+.bio-content.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Imagem */
+.bio-content img,
+.registros img {
+  width: 17.5rem; /* 280px → rem */
+  border-radius: 0.938rem; /* 15px → rem */
+  object-fit: cover;
+
+  border: 0.125rem solid rgba(255, 215, 0, 0.2); /* 2px → rem */
+  box-shadow: 0 0.625rem 1.563rem rgba(0, 0, 0, 0.7); /* 10px 25px → rem */
+
+  transition: 0.3s;
+}
+
+.bio-content img:hover {
+  transform: scale(1.05);
+  border-color: gold;
+}
+
+
+/* ================================
+   RESPONSIVO
+   ================================ */
+
+/* Tablet (até 1024px) */
+@media (max-width: 1024px) {
+  .biography h2 {
+    font-size: 2.4rem;
+  }
+
+  .intro {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .bio-section h3 {
+    width: 70%;
+    font-size: 1.5rem;
+  }
+
+  .registros img {
+    width: calc(50% - 2rem) !important;
+    height: 22rem;
+  }
+
+  .bio-content img {
+    width: 14rem;
+  }
+}
+
+/* Mobile grande (até 768px) */
+@media (max-width: 768px) {
+  .biography {
+    padding: 3rem 1.25rem;
+  }
+
+  .biography h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .bio-section {
+    padding: 1.5rem 1.25rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+  }
+
+  /* Empilha imagem e texto verticalmente */
+  .bio-content,
+  .bio-content.reverse {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio-content img {
+    width: 100%;
+    max-width: 22rem;
+    height: 18rem;
+  }
+
+  .bio-section h3 {
+    width: 85%;
+    font-size: 1.4rem;
+  }
+
+  .registros img {
+    width: calc(100% - 2rem) !important;
+    height: 20rem;
+  }
+
+  .intro {
+    height: auto;
+  }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+  .biography {
+    padding: 2rem 1rem;
+  }
+
+  .biography h2 {
+    font-size: 1.7rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .bio-section {
+    padding: 1.25rem 1rem;
+    margin: 1.5rem auto;
+    /* Desativa hover de translate em touch */
+    transform: none !important;
+  }
+
+  .bio-section h3 {
+    width: 100%;
+    font-size: 1.25rem;
+  }
+
+  .bio-section p {
+    font-size: 1rem;
+  }
+
+  .bio-content img {
+    max-width: 100%;
+    height: 16rem;
+  }
+
+  .registros img {
+    width: 100% !important;
+    height: 18rem;
+    margin: 0.75rem 0;
+  }
+}
